@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team Hometown & College Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f6f8fb; color: #172033; }
+    header { padding: 18px 24px; background: #111827; color: white; display: flex; gap: 16px; align-items: center; justify-content: space-between; }
+    header h1 { margin: 0; font-size: 20px; }
+    header .sub { opacity: .8; font-size: 13px; margin-top: 4px; }
+    .layout { display: grid; grid-template-columns: 340px 1fr; height: calc(100vh - 74px); }
+    aside { overflow: auto; padding: 16px; border-right: 1px solid #d7dde8; background: white; }
+    #map { height: 100%; width: 100%; }
+    .search { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cdd5e1; border-radius: 10px; margin-bottom: 12px; }
+    .member-card { border: 1px solid #d7dde8; border-radius: 14px; padding: 12px; margin: 10px 0; cursor: pointer; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+    .member-card:hover { border-color: #94a3b8; }
+    .member-name { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+    .detail { font-size: 13px; color: #475569; margin: 3px 0; }
+    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+    .label { background: white; color: #0f172a; border: 2px solid #38bdf8; border-radius: 14px; padding: 4px 8px; font-weight: 700; box-shadow: 0 1px 4px rgba(0,0,0,.18); white-space: nowrap; }
+    .logo-marker { background: white; border: 2px solid #111827; border-radius: 12px; width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,.25); overflow: hidden; font-weight: 800; font-size: 13px; text-align: center; }
+    .logo-marker img { width: 100%; height: 100%; object-fit: contain; }
+    .popup-title { font-weight: 800; margin-bottom: 6px; }
+    .missing { padding: 10px; border-radius: 10px; background: #fff7ed; color: #9a3412; font-size: 13px; margin: 10px 0; }
+    footer { font-size: 12px; color: #64748b; margin-top: 12px; line-height: 1.35; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Team Hometown & College Map</h1>
+      <div class="sub">Names mark hometowns. Logos mark colleges. Lines connect each teammate's path.</div>
+    </div>
+    <div id="count"></div>
+  </header>
+  <div class="layout">
+    <aside>
+      <input id="search" class="search" placeholder="Search name, hometown, or college..." />
+      <div id="missing"></div>
+      <div id="list"></div>
+      <footer>
+        To add future teammates, edit <b>data/team_members.json</b>. Add college logo PNG files to <b>logos/</b> and update each member's logo path.
+      </footer>
+    </aside>
+    <main id="map"></main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map', { scrollWheelZoom: true }).setView([39.5, -98.35], 4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const layerGroup = L.layerGroup().addTo(map);
+    let allMembers = [];
+
+    function initials(text) {
+      return (text || "?").split(/\s|\/|-/).filter(Boolean).slice(0,2).map(x => x[0]).join("").toUpperCase();
+    }
+
+    function hometownIcon(member) {
+      return L.divIcon({
+        className: '',
+        html: `<div class="label" style="border-color:${member.color}">${member.name}</div>`,
+        iconSize: [120, 28],
+        iconAnchor: [10, 14]
+      });
+    }
+
+    function collegeIcon(member) {
+      const logo = member.college.logo;
+      const fallback = initials(member.college.name);
+      const html = logo
+        ? `<div class="logo-marker" style="border-color:${member.color}"><img src="${logo}" onerror="this.remove(); this.parentElement.textContent='${fallback}'" /></div>`
+        : `<div class="logo-marker" style="border-color:${member.color}">${fallback}</div>`;
+      return L.divIcon({ className: '', html, iconSize: [58, 58], iconAnchor: [29, 29] });
+    }
+
+    function popup(member) {
+      return `
+        <div class="popup-title">${member.name}</div>
+        <div><b>Hometown:</b> ${member.hometown.label || "Not entered"}</div>
+        <div><b>College:</b> ${member.college.name || "Not entered"}</div>
+        <div><b>College town:</b> ${member.college.label || "Not entered"}</div>
+        ${member.notes ? `<div><b>Note:</b> ${member.notes}</div>` : ""}
+      `;
+    }
+
+    function valid(member) {
+      return member.hometown.lat && member.hometown.lng && member.college.lat && member.college.lng;
+    }
+
+    function draw(members) {
+      layerGroup.clearLayers();
+      const bounds = [];
+      const missing = [];
+
+      members.forEach(member => {
+        if (!valid(member)) {
+          missing.push(member.name);
+          return;
+        }
+
+        const sameHomeMembers = members.filter(m =>
+          m.hometown.lat === member.hometown.lat &&
+          m.hometown.lng === member.hometown.lng
+        );
+
+        const sameHomeIndex = sameHomeMembers.findIndex(m => m.id === member.id);
+
+        const offsetDistance = 0.03;
+        const angle = (2 * Math.PI * sameHomeIndex) / Math.max(sameHomeMembers.length, 1);
+
+        const home = [
+          member.hometown.lat + Math.sin(angle) * offsetDistance,
+          member.hometown.lng + Math.cos(angle) * offsetDistance
+        ];
+
+        const realHome = [member.hometown.lat, member.hometown.lng];
+        const college = [member.college.lat, member.college.lng];
+        bounds.push(home, college);
+
+        L.polyline([realHome, college], { color: member.color, weight: 4, opacity: .75 }).addTo(layerGroup).bindPopup(popup(member));
+        L.marker(home, { icon: hometownIcon(member) }).addTo(layerGroup).bindPopup(popup(member));
+        L.marker(college, { icon: collegeIcon(member) }).addTo(layerGroup).bindPopup(popup(member));
+      });
+
+      document.getElementById("missing").innerHTML = missing.length
+        ? `<div class="missing"><b>${missing.length} teammate(s) need more location data:</b><br>${missing.join(", ")}</div>`
+        : "";
+
+      if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
+    }
+
+    function renderList(members) {
+      const list = document.getElementById("list");
+      list.innerHTML = members.map(member => `
+        <div class="member-card" data-id="${member.id}">
+          <div class="member-name"><span class="dot" style="background:${member.color}"></span>${member.name}</div>
+          <div class="detail">Hometown: ${member.hometown.label || "Not entered"}</div>
+          <div class="detail">College: ${member.college.name || "Not entered"}</div>
+        </div>
+      `).join("");
+
+      document.querySelectorAll(".member-card").forEach(card => {
+        card.addEventListener("click", () => {
+          const member = allMembers.find(m => String(m.id) === card.dataset.id);
+          if (member && valid(member)) {
+            map.setView([member.hometown.lat, member.hometown.lng], 7);
+          }
+        });
+      });
+    }
+
+    function filter() {
+      const q = document.getElementById("search").value.toLowerCase();
+      const filtered = allMembers.filter(m =>
+        [m.name, m.hometown.label, m.college.name, m.college.label].join(" ").toLowerCase().includes(q)
+      );
+      renderList(filtered);
+      draw(filtered);
+    }
+
+    fetch("data/team_members.json")
+      .then(r => r.json())
+      .then(data => {
+        allMembers = data;
+        document.getElementById("count").textContent = `${data.length} teammates`;
+        renderList(data);
+        draw(data);
+        document.getElementById("search").addEventListener("input", filter);
+      });
+  </script>
+</body>
+</html>

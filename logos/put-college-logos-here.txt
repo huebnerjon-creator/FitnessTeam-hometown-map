@@ -1,0 +1,1 @@
+Add PNG logo files here. Match the filename used in data/team_members.json, or edit the logo path there.

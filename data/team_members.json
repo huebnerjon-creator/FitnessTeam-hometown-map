@@ -1,0 +1,684 @@
+[
+  {
+    "id": 1,
+    "name": "Jonathan Huebner",
+    "hometown": {
+      "city": "Lutz",
+      "state": "Florida",
+      "label": "Lutz, Florida",
+      "lat": 28.1511,
+      "lng": -82.4615
+    },
+    "college": {
+      "name": "University of Central FL",
+      "city": "Orlando",
+      "state": "Florida",
+      "label": "Orlando, Florida",
+      "lat": 28.5383,
+      "lng": -81.3792,
+      "logo": "logos/ucf.png"
+    },
+    "color": "#1f77b4",
+    "notes": ""
+  },
+  {
+    "id": 2,
+    "name": "Ben Morrill",
+    "hometown": {
+      "city": "Overland Park",
+      "state": "Kansas",
+      "label": "Overland Park, Kansas",
+      "lat": 38.9822,
+      "lng": -94.6708
+    },
+    "college": {
+      "name": "Kansas State",
+      "city": "Manhattan",
+      "state": "Kansas",
+      "label": "Manhattan, Kansas",
+      "lat": 39.1836,
+      "lng": -96.5717,
+      "logo": "logos/kansas-state.png"
+    },
+    "color": "#ff7f0e",
+    "notes": ""
+  },
+  {
+    "id": 3,
+    "name": "Lachlan Murphy",
+    "hometown": {
+      "city": "Minneapolis",
+      "state": "Minnesota",
+      "label": "Minneapolis, Minnesota",
+      "lat": 44.9778,
+      "lng": -93.265
+    },
+    "college": {
+      "name": "University of Alabama",
+      "city": "Tuscaloosa",
+      "state": "Alabama",
+      "label": "Tuscaloosa, Alabama",
+      "lat": 33.2098,
+      "lng": -87.5692,
+      "logo": "logos/university-of-alabama.png"
+    },
+    "color": "#2ca02c",
+    "notes": "RTR \ud83d\udc18"
+  },
+  {
+    "id": 4,
+    "name": "Steven Taschner",
+    "hometown": {
+      "city": "Lone Tree",
+      "state": "Colorado",
+      "label": "Lone Tree, Colorado",
+      "lat": 39.5517,
+      "lng": -104.8863
+    },
+    "college": {
+      "name": "Washington University in St. Louis",
+      "city": "St. Louis",
+      "state": "Missouri",
+      "label": "St. Louis, Missouri",
+      "lat": 38.627,
+      "lng": -90.1994,
+      "logo": "logos/washington-university-in-st-louis.png"
+    },
+    "color": "#d62728",
+    "notes": ""
+  },
+  {
+    "id": 5,
+    "name": "Graham Barnett",
+    "hometown": {
+      "city": "Patricksburg",
+      "state": "Indiana",
+      "label": "Patricksburg, Indiana",
+      "lat": 39.3134,
+      "lng": -86.9564
+    },
+    "college": {
+      "name": "Purdue University",
+      "city": "West Lafayette",
+      "state": "Indiana",
+      "label": "West Lafayette, Indiana",
+      "lat": 40.4259,
+      "lng": -86.9081,
+      "logo": "logos/purdue-university.png"
+    },
+    "color": "#9467bd",
+    "notes": ""
+  },
+  {
+    "id": 6,
+    "name": "Nick Tobaben",
+    "hometown": {
+      "city": "Topeka",
+      "state": "Kansas",
+      "label": "Topeka, Kansas",
+      "lat": 39.0473,
+      "lng": -95.6752
+    },
+    "college": {
+      "name": "University of Kansas",
+      "city": "Lawrence",
+      "state": "Kansas",
+      "label": "Lawrence, Kansas",
+      "lat": 38.9717,
+      "lng": -95.2353,
+      "logo": "logos/university-of-kansas.png"
+    },
+    "color": "#8c564b",
+    "notes": "(See G14)"
+  },
+  {
+    "id": 7,
+    "name": "Cleve Wilcher",
+    "hometown": {
+      "city": "Lee's Summit",
+      "state": "Missouri",
+      "label": "Lee's Summit, Missouri",
+      "lat": 38.9108,
+      "lng": -94.3822
+    },
+    "college": {
+      "name": "Missouri S&T",
+      "city": "Rolla",
+      "state": "Missouri",
+      "label": "Rolla, Missouri",
+      "lat": 37.9514,
+      "lng": -91.7713,
+      "logo": "logos/missouri-s-t.png"
+    },
+    "color": "#e377c2",
+    "notes": ""
+  },
+  {
+    "id": 8,
+    "name": "Matt Mason",
+    "hometown": {
+      "city": "Parsons",
+      "state": "Kansas",
+      "label": "Parsons, Kansas",
+      "lat": 37.3403,
+      "lng": -95.2611
+    },
+    "college": {
+      "name": "Wichita State",
+      "city": "Wichita",
+      "state": "",
+      "label": "Wichita",
+      "lat": null,
+      "lng": null,
+      "logo": "logos/wichita-state.png"
+    },
+    "color": "#7f7f7f",
+    "notes": "Parsons > Topeka"
+  },
+  {
+    "id": 9,
+    "name": "Brennan Trupka",
+    "hometown": {
+      "city": "Shawnee",
+      "state": "Kansas",
+      "label": "Shawnee, Kansas",
+      "lat": 39.0228,
+      "lng": -94.7152
+    },
+    "college": {
+      "name": "Kansas State",
+      "city": "Manhattan",
+      "state": "Kansas",
+      "label": "Manhattan, Kansas",
+      "lat": 39.1836,
+      "lng": -96.5717,
+      "logo": "logos/kansas-state.png"
+    },
+    "color": "#bcbd22",
+    "notes": ""
+  },
+  {
+    "id": 10,
+    "name": "Abigail Arens",
+    "hometown": {
+      "city": "Coralville",
+      "state": "Iowa",
+      "label": "Coralville, Iowa",
+      "lat": 41.6764,
+      "lng": -91.5804
+    },
+    "college": {
+      "name": "Iowa State University",
+      "city": "Ames",
+      "state": "Iowa",
+      "label": "Ames, Iowa",
+      "lat": 42.0308,
+      "lng": -93.6319,
+      "logo": "logos/iowa-state-university.png"
+    },
+    "color": "#17becf",
+    "notes": "CORN"
+  },
+  {
+    "id": 11,
+    "name": "Ian Baker",
+    "hometown": {
+      "city": "Hampden",
+      "state": "Maine",
+      "label": "Hampden, Maine",
+      "lat": 44.744,
+      "lng": -68.8361
+    },
+    "college": {
+      "name": "Rochester Institute of Technology",
+      "city": "Rochester",
+      "state": "NY",
+      "label": "Rochester, NY",
+      "lat": 43.1566,
+      "lng": -77.6088,
+      "logo": "logos/rochester-institute-of-technology.png"
+    },
+    "color": "#006d77",
+    "notes": ""
+  },
+  {
+    "id": 12,
+    "name": "Mike Dawson",
+    "hometown": {
+      "city": "",
+      "state": "",
+      "label": "",
+      "lat": null,
+      "lng": null
+    },
+    "college": {
+      "name": "",
+      "city": "",
+      "state": "",
+      "label": "",
+      "lat": null,
+      "lng": null,
+      "logo": ""
+    },
+    "color": "#9b2226",
+    "notes": ""
+  },
+  {
+    "id": 13,
+    "name": "Surajit Bhaduri",
+    "hometown": {
+      "city": "Topeka",
+      "state": "Kansas",
+      "label": "Topeka, Kansas",
+      "lat": 39.0473,
+      "lng": -95.6752
+    },
+    "college": {
+      "name": "Northwestern",
+      "city": "Evanston",
+      "state": "Illinois",
+      "label": "Evanston, Illinois",
+      "lat": 42.0451,
+      "lng": -87.6877,
+      "logo": "logos/northwestern.png"
+    },
+    "color": "#1f77b4",
+    "notes": "CAP CITY TIL I DIE"
+  },
+  {
+    "id": 14,
+    "name": "Andrew Murray",
+    "hometown": {
+      "city": "Olathe",
+      "state": "Kansas",
+      "label": "Olathe, Kansas",
+      "lat": 38.8814,
+      "lng": -94.8191
+    },
+    "college": {
+      "name": "University of Kansas",
+      "city": "Lawrence",
+      "state": "Kansas",
+      "label": "Lawrence, Kansas",
+      "lat": 38.9717,
+      "lng": -95.2353,
+      "logo": "logos/university-of-kansas.png"
+    },
+    "color": "#ff7f0e",
+    "notes": ""
+  },
+  {
+    "id": 15,
+    "name": "Derek Wilson",
+    "hometown": {
+      "city": "Toledo",
+      "state": "Iowa",
+      "label": "Toledo, Iowa",
+      "lat": 41.9947,
+      "lng": -92.5769
+    },
+    "college": {
+      "name": "University of Iowa",
+      "city": "Iowa City",
+      "state": "Iowa",
+      "label": "Iowa City, Iowa",
+      "lat": 41.6611,
+      "lng": -91.5302,
+      "logo": "logos/university-of-iowa.png"
+    },
+    "color": "#2ca02c",
+    "notes": ""
+  },
+  {
+    "id": 16,
+    "name": "Vince Gerstner",
+    "hometown": {
+      "city": "Overland Park",
+      "state": "Kansas",
+      "label": "Overland Park, Kansas",
+      "lat": 38.9822,
+      "lng": -94.6708
+    },
+    "college": {
+      "name": "University of Kansas",
+      "city": "Lawrence",
+      "state": "Kansas",
+      "label": "Lawrence, Kansas",
+      "lat": 38.9717,
+      "lng": -95.2353,
+      "logo": "logos/university-of-kansas.png"
+    },
+    "color": "#d62728",
+    "notes": ""
+  },
+  {
+    "id": 17,
+    "name": "Jake Culey",
+    "hometown": {
+      "city": "Kearney",
+      "state": "Nebraska",
+      "label": "Kearney, Nebraska",
+      "lat": 40.6993,
+      "lng": -99.0817
+    },
+    "college": {
+      "name": "University of Nebraska - Lincoln",
+      "city": "Lincoln",
+      "state": "Nebraska",
+      "label": "Lincoln, Nebraska",
+      "lat": 40.8137,
+      "lng": -96.7026,
+      "logo": "logos/university-of-nebraska-lincoln.png"
+    },
+    "color": "#9467bd",
+    "notes": ""
+  },
+  {
+    "id": 18,
+    "name": "Austin Lauser",
+    "hometown": {
+      "city": "Vancouver",
+      "state": "Washington",
+      "label": "Vancouver, Washington",
+      "lat": 45.6387,
+      "lng": -122.6615
+    },
+    "college": {
+      "name": "Oregon State",
+      "city": "Corvallis",
+      "state": "Oregon",
+      "label": "Corvallis, Oregon",
+      "lat": 44.5646,
+      "lng": -123.262,
+      "logo": "logos/oregon-state.png"
+    },
+    "color": "#8c564b",
+    "notes": ""
+  },
+  {
+    "id": 19,
+    "name": "Eric Smith",
+    "hometown": {
+      "city": "Charlevoix",
+      "state": "Michigan",
+      "label": "Charlevoix, Michigan",
+      "lat": 45.3181,
+      "lng": -85.2584
+    },
+    "college": {
+      "name": "Michigan Tech",
+      "city": "Houghton",
+      "state": "Michigan",
+      "label": "Houghton, Michigan",
+      "lat": 47.1211,
+      "lng": -88.5694,
+      "logo": "logos/michigan-tech.png"
+    },
+    "color": "#e377c2",
+    "notes": "SNOW"
+  },
+  {
+    "id": 20,
+    "name": "Jason Schuster",
+    "hometown": {
+      "city": "",
+      "state": "",
+      "label": "",
+      "lat": null,
+      "lng": null
+    },
+    "college": {
+      "name": "",
+      "city": "",
+      "state": "",
+      "label": "",
+      "lat": null,
+      "lng": null,
+      "logo": ""
+    },
+    "color": "#7f7f7f",
+    "notes": ""
+  },
+  {
+    "id": 21,
+    "name": "Will Yarinsky",
+    "hometown": {
+      "city": "New York",
+      "state": "New York",
+      "label": "New York, New York",
+      "lat": 40.7128,
+      "lng": -74.006
+    },
+    "college": {
+      "name": "Rice University/Georgia Institute of Technology",
+      "city": "Houston",
+      "state": "Texas",
+      "label": "Houston, Texas",
+      "lat": 29.7604,
+      "lng": -95.3698,
+      "logo": "logos/rice-university-georgia-institute-of-technology.png"
+    },
+    "color": "#bcbd22",
+    "notes": ""
+  },
+  {
+    "id": 22,
+    "name": "Jake Bruce",
+    "hometown": {
+      "city": "Shawnee",
+      "state": "Kansas",
+      "label": "Shawnee, Kansas",
+      "lat": 39.0228,
+      "lng": -94.7152
+    },
+    "college": {
+      "name": "University of Kansas",
+      "city": "Lawrence",
+      "state": "Kansas",
+      "label": "Lawrence, Kansas",
+      "lat": 38.9717,
+      "lng": -95.2353,
+      "logo": "logos/university-of-kansas.png"
+    },
+    "color": "#17becf",
+    "notes": ""
+  },
+  {
+    "id": 23,
+    "name": "Matthew Chauvin",
+    "hometown": {
+      "city": "Destin",
+      "state": "Florida",
+      "label": "Destin, Florida",
+      "lat": 30.3935,
+      "lng": -86.4958
+    },
+    "college": {
+      "name": "University of Southern Alabama",
+      "city": "Mobile",
+      "state": "Alabama",
+      "label": "Mobile, Alabama",
+      "lat": 30.6954,
+      "lng": -88.0399,
+      "logo": "logos/university-of-southern-alabama.png"
+    },
+    "color": "#006d77",
+    "notes": ""
+  },
+  {
+    "id": 24,
+    "name": "Ben Buchanan",
+    "hometown": {
+      "city": "Napoleon",
+      "state": "Missouri",
+      "label": "Napoleon, Missouri",
+      "lat": 39.1328,
+      "lng": -94.0794
+    },
+    "college": {
+      "name": "University of Missouri - Kansas City",
+      "city": "Kansas City",
+      "state": "Missouri",
+      "label": "Kansas City, Missouri",
+      "lat": 39.0997,
+      "lng": -94.5786,
+      "logo": "logos/university-of-missouri-kansas-city.png"
+    },
+    "color": "#9b2226",
+    "notes": ""
+  },
+  {
+    "id": 25,
+    "name": "Jason George",
+    "hometown": {
+      "city": "",
+      "state": "",
+      "label": "",
+      "lat": null,
+      "lng": null
+    },
+    "college": {
+      "name": "",
+      "city": "",
+      "state": "",
+      "label": "",
+      "lat": null,
+      "lng": null,
+      "logo": ""
+    },
+    "color": "#1f77b4",
+    "notes": ""
+  },
+  {
+    "id": 26,
+    "name": "Cheon Oh",
+    "hometown": {
+      "city": "",
+      "state": "",
+      "label": "",
+      "lat": null,
+      "lng": null
+    },
+    "college": {
+      "name": "",
+      "city": "",
+      "state": "",
+      "label": "",
+      "lat": null,
+      "lng": null,
+      "logo": ""
+    },
+    "color": "#ff7f0e",
+    "notes": ""
+  },
+  {
+    "id": 27,
+    "name": "Hailey Negley",
+    "hometown": {
+      "city": "Mundelein",
+      "state": "Illinois",
+      "label": "Mundelein, Illinois",
+      "lat": 42.2631,
+      "lng": -88.0039
+    },
+    "college": {
+      "name": "Iowa State",
+      "city": "Ames",
+      "state": "Iowa",
+      "label": "Ames, Iowa",
+      "lat": 42.0308,
+      "lng": -93.6319,
+      "logo": "logos/iowa-state.png"
+    },
+    "color": "#2ca02c",
+    "notes": ""
+  },
+  {
+    "id": 28,
+    "name": "PJ Terry",
+    "hometown": {
+      "city": "",
+      "state": "",
+      "label": "",
+      "lat": null,
+      "lng": null
+    },
+    "college": {
+      "name": "",
+      "city": "",
+      "state": "",
+      "label": "",
+      "lat": null,
+      "lng": null,
+      "logo": ""
+    },
+    "color": "#d62728",
+    "notes": ""
+  },
+  {
+    "id": 29,
+    "name": "Kendrick Tate",
+    "hometown": {
+      "city": "Kingsport",
+      "state": "Tennessee",
+      "label": "Kingsport, Tennessee",
+      "lat": 36.5484,
+      "lng": -82.5618
+    },
+    "college": {
+      "name": "University of Alabama",
+      "city": "Tuscaloosa",
+      "state": "Alabama",
+      "label": "Tuscaloosa, Alabama",
+      "lat": 33.2098,
+      "lng": -87.5692,
+      "logo": "logos/university-of-alabama.png"
+    },
+    "color": "#9467bd",
+    "notes": "RTR"
+  },
+  {
+    "id": 30,
+    "name": "Carson Ray",
+    "hometown": {
+      "city": "Roanoke",
+      "state": "Virginia",
+      "label": "Roanoke, Virginia",
+      "lat": 37.271,
+      "lng": -79.9414
+    },
+    "college": {
+      "name": "Georgia Tech",
+      "city": "Atlanta",
+      "state": "Georgia",
+      "label": "Atlanta, Georgia",
+      "lat": 33.749,
+      "lng": -84.388,
+      "logo": "logos/georgia-tech.png"
+    },
+    "color": "#8c564b",
+    "notes": ""
+  },
+  {
+    "id": 31,
+    "name": "Chris Hanshew",
+    "hometown": {
+      "city": "Emporia",
+      "state": "Kansas",
+      "label": "Emporia, Kansas",
+      "lat": 38.4039,
+      "lng": -96.1817
+    },
+    "college": {
+      "name": "Emporia State & University of Kansas",
+      "city": "Emporia",
+      "state": "Kansas",
+      "label": "Emporia, Kansas",
+      "lat": 38.4039,
+      "lng": -96.1817,
+      "logo": "logos/emporia-state-university-of-kansas.png"
+    },
+    "color": "#e377c2",
+    "notes": ""
+  }
+]
