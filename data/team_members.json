@@ -166,10 +166,10 @@
     "college": {
       "name": "Wichita State",
       "city": "Wichita",
-      "state": "",
-      "label": "Wichita",
-      "lat": null,
-      "lng": null,
+      "state": "Kansas",
+      "label": "Wichita, Kansas",
+      "lat": 37.6922,
+      "lng": -97.3375,
       "logo": "logos/wichita-state.png"
     },
     "color": "#7f7f7f",
