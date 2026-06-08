@@ -245,20 +245,20 @@
     "id": 12,
     "name": "Mike Dawson",
     "hometown": {
-      "city": "",
-      "state": "",
-      "label": "",
-      "lat": null,
-      "lng": null
+      "city": "Normal",
+      "state": "Illinois",
+      "label": "Normal, Illinois",
+      "lat": 40.514,
+      "lng": -88.991
     },
     "college": {
-      "name": "",
-      "city": "",
-      "state": "",
-      "label": "",
-      "lat": null,
-      "lng": null,
-      "logo": ""
+      "name": "Brigham Young University",
+      "city": "Provo",
+      "state": "Utah",
+      "label": "Provo, Utah",
+      "lat": 40.2338,
+      "lng": 111.6585,
+      "logo": "logos/brigham-young-university.png"
     },
     "color": "#9b2226",
     "notes": ""
@@ -421,20 +421,20 @@
     "id": 20,
     "name": "Jason Schuster",
     "hometown": {
-      "city": "",
-      "state": "",
-      "label": "",
-      "lat": null,
-      "lng": null
+      "city": "Phillips",
+      "state": "Nebraska",
+      "label": "Phillips, Nebraska",
+      "lat": 40.89337,
+      "lng": -98.187
     },
     "college": {
-      "name": "",
-      "city": "",
-      "state": "",
-      "label": "",
-      "lat": null,
-      "lng": null,
-      "logo": ""
+      "name": "Tulane",
+      "city": "New Orleans",
+      "state": "Louisiana",
+      "label": "New Orleans, Louisiana",
+      "lat": 29.9511,
+      "lng": -90.0715,
+      "logo": "logos/tulane.png"
     },
     "color": "#7f7f7f",
     "notes": ""
@@ -597,20 +597,20 @@
     "id": 28,
     "name": "PJ Terry",
     "hometown": {
-      "city": "",
-      "state": "",
-      "label": "",
-      "lat": null,
-      "lng": null
+      "city": "Dacula",
+      "state": "Georgia",
+      "label": "Dacula, Georgia",
+      "lat": 33.9875,
+      "lng": -83.8919
     },
     "college": {
-      "name": "",
-      "city": "",
-      "state": "",
-      "label": "",
-      "lat": null,
-      "lng": null,
-      "logo": ""
+      "name": "University of Georgia",
+      "city": "Athens",
+      "state": "Georgia",
+      "label": "Athens, Georgia",
+      "lat": 33.9500,
+      "lng": -83.3833,
+      "logo": "logos/Georgia.png"
     },
     "color": "#d62728",
     "notes": ""
